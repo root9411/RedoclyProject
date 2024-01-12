@@ -1,1 +1,95 @@
-﻿
+﻿openapi: 3.1.0
+info:
+  title: Your API
+  version: 1.0.0
+  description: Description of your API
+
+servers:
+  - url: https://api.example.com/v1
+    description: Production server
+
+paths:
+  /api/products:
+    get:
+      summary: Get a list of products
+      description: Returns a list of products.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                - id: 1
+                  name: Product 1
+                - id: 2
+                  name: Product 2
+
+    post:
+      summary: Create a new product
+      description: Creates a new product.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              name: New Product
+      responses:
+        '201':
+          description: Product created successfully
+
+  /api/products/{productId}:
+    get:
+      summary: Get a product by ID
+      description: Returns details of a product by ID.
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          description: ID of the product
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                id: 1
+                name: Product 1
+
+    put:
+      summary: Update a product by ID
+      description: Updates details of a product by ID.
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          description: ID of the product
+          schema:
+            type: integer
+            format: int32
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              name: Updated Product
+      responses:
+        '200':
+          description: Product updated successfully
+
+    delete:
+      summary: Delete a product by ID
+      description: Deletes a product by ID.
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          description: ID of the product
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '204':
+          description: Product deleted successfully

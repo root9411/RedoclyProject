@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head />
+<body>
+    <H1>Redoc in action</H1>
+    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
+    <div id="redoc-container"></div>
+
+
+    https://localhost:7200/swagger/v1/swagger.json
+    <script>
+        Redoc.init('http://petstore.swagger.io/v2/swagger.json', {
+            "expandResponses": "200,400"
+        }, document.getElementById('redoc-container'))
+    </script>
+</body>
+</html>
