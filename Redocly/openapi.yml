@@ -5,7 +5,7 @@ info:
   description: Description of your API
 
 servers:
-  - url: https://api.example.com/v1
+  - url: https://techook.shop/
     description: Production server
 
 paths:
