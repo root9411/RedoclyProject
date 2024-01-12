@@ -1,0 +1,6 @@
+@Redocly_HostAddress = http://localhost:5276
+
+GET {{Redocly_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
